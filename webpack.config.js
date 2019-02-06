@@ -4,6 +4,7 @@ const webpack = require("webpack");
 const path = require("path");
 
 module.exports = {
+  entry: './src/entry.js',
   module: {
     rules: [
       {
@@ -26,6 +27,15 @@ module.exports = {
           }
         ]
       },
+        {
+          test: /\.(png|jp(e*)g|svg|gif)$/,
+            use: [{
+            loader: 'url-loader',
+                options: {
+                  name: 'images/[name].[ext]'
+                }
+            }]
+        }
     ]
   },  
   plugins: [
