@@ -75,8 +75,8 @@ export default class CourseSelect extends Component {
         const department = evt.target.value;
         const course = null;
         this.setState({department, course});
-        //this.props.onChange({name: 'department', value: department});
-        //this.props.onChange({name: 'course', value: course});
+        this.props.onChange({name: 'department', value: department});
+        this.props.onChange({name: 'course', value: course});
 
         if (department) this.fetch(department);
     };
@@ -91,7 +91,7 @@ export default class CourseSelect extends Component {
     onSelectCourse = (evt) => {
         const course = evt.target.value;
         this.setState({course});
-        //this.props.onChange({name: 'course', value: course});
+        this.props.onChange({name: 'course', value: course});
     };
 }
 
